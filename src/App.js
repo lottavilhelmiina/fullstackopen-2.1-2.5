@@ -25,10 +25,14 @@ const Part = ({ part }) => {
 };
 */
 
-const Course = ({ course }) => {
+/* Tässä komponentissa console valittaa että jokaisella listan childilla pitäis
+   olla unique key prop, mutta koska toi Content komponentti on rakennettu tolleen,
+   niin en saa siihen viitattua tässä.
+*/
+const Course = ({ course, key }) => {
   return (
     <>
-      <Header course={course} />
+      <Header course={course} key={course.id} />
       {Content(course.parts)}
     </>
   );
